@@ -17,8 +17,7 @@ public class RegisterUserServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-       
-        response.sendRedirect(request.getContextPath() + "/user/user-form.jsp");
+        response.sendRedirect(request.getContextPath() + "/user-form.jsp");
     }
 
     @Override
@@ -40,11 +39,7 @@ public class RegisterUserServlet extends HttpServlet {
 
         try {
             userDao.saveUser(user);
-            response.setContentType("text/html;charset=UTF-8");
-            response.getWriter().println("<h2>User Registered Successfully</h2>");
-            response.getWriter().println("<p>Name: " + name + "</p>");
-            response.getWriter().println("<p>Email: " + email + "</p>");
-            response.getWriter().println("<p>Role: " + role + "</p>");
+            response.sendRedirect(request.getContextPath() + "/courses");
         } catch (Exception e) {
             throw new ServletException("Error saving user", e);
         }

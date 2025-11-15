@@ -13,13 +13,12 @@ public class DBConnection {
 
     private static final String URL = "jdbc:mysql://localhost:3306/lmsdb";
     private static final String USER = "root";
-    private static final String PASSWORD = "";
+    private static final String PASSWORD = "Ujwal@2003";
 
-    // ✅ Static method to get a fresh database connection
     public static Connection getConnection() {
         Connection conn = null;
         try {
-            // Load MySQL driver
+          
             Class.forName("com.mysql.cj.jdbc.Driver");
             conn = DriverManager.getConnection(URL, USER, PASSWORD);
             System.out.println("✅ Connected to MySQL successfully!");

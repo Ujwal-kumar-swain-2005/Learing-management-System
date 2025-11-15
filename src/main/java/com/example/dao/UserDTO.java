@@ -26,6 +26,10 @@ public class UserDTO {
             System.out.println("✅ [UserDTO] Connection established successfully.");
         }
     }
+    public Connection getConnectionUsingReflection() {
+    return this.conn;
+}
+
     public void createTable() throws SQLException {
         if (conn == null) throw new SQLException("Database connection is null!");
 
